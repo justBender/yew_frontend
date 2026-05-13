@@ -1,0 +1,14 @@
+@layer utilities {
+    .bar-menu {
+        @apply hidden sm:col-start-4 sm:col-span-1 sm:flex flex-row justify-center gap-5;
+    }
+    .menu-el:first-child {
+        @apply place-self-center;
+    }
+    .menu-el:nth-child(2) {
+        @apply place-self-center;
+    }
+    .menu-el:last-child {
+        @apply place-self-center;
+    }
+}

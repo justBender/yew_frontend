@@ -1,0 +1,13 @@
+@layer utilities {
+    .wrapper {
+        @apply bg-gray-900
+        row-start-1
+        row-end-4
+        col-start-2
+        col-span-2
+        max-sm:row-start-2
+        max-sm:row-end-4
+        max-sm:col-start-2
+        max-sm:col-span-2;
+    }
+}

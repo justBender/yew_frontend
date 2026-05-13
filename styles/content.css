@@ -1,0 +1,17 @@
+@layer utilities {
+    .content {
+        @apply grid grid-cols-1 grid-rows-1 place-content-center;
+    }
+    .content-article {
+        @apply grid grid-cols-1 grid-rows-3 justify-items-center px-6 py-12;
+    }
+    .content-article-headline {
+        @apply text-5xl font-bold max-h-max text-mauve-300 self-center;
+    }
+    .content-article-body {
+        @apply text-lg leading-8;
+    }
+    .content-image {
+        @apply w-56;
+    }
+}

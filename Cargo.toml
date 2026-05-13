@@ -1,0 +1,36 @@
+[package]
+name = "yew_frontend"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "bin"
+path = "src/main.rs"
+
+[tools]
+tailwindcss = "4.2.2"
+
+[dependencies]
+stylist = { version = "^0.15.1",features = ["yew"] }
+yew = {
+    version="^0.23.0",
+    features=["csr"]
+}
+yew_icons = {
+    version = "^0.10",
+    features = ["heroicons_solid", "simple_icons","octicons", "bootstrap"]
+}
+yew-router = "^0.20.0"
+gloo = "^0.12.0"
+wasm-bindgen = "^0.2.121"
+js-sys = "^0.3.98"
+web-sys = {
+    version = "^0.3.98",
+    features = [
+        "CanvasRenderingContext2d",
+        "HtmlCanvasElement",
+        "ImageData"
+    ]
+}
+[build]
+target = "index.html"

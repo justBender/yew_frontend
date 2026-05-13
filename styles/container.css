@@ -1,0 +1,5 @@
+@layer components {
+    #container {
+        @apply bg-gray-900 h-screen grid grid-cols-4 grid-rows-3;
+    }
+}

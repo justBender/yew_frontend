@@ -1,0 +1,17 @@
+@layer utilities {
+
+    .top-bar {
+        @apply
+        col-start-1
+        col-span-6
+        row-end-1
+        max-w-full
+        text-theme-yellow
+        sm:grid sm:grid-cols-4 sm:grid-rows-1 sm:justify-end-safe min-h-12
+        grid grid-rows-1 place-content-center;
+    }
+
+    .bar-el:first-child {
+        @apply sm:col-start-1 col-span-1 grid grid-rows-1 row-start-1 place-content-center items-center sm:mr-12;
+    }
+}
