@@ -58,7 +58,7 @@ impl Component for TopBar {
                             </Link<Route>>
                         </div>
                         <div class="menu-el">
-                                <Link<Route> to={Route::LandingPage}>
+                                <Link<Route> to={Route::Landing}>
                                     <Icon
                                             data={IconData::OCTICONS_GEAR_24}
                                             width={"1.25em".to_owned()}
@@ -67,7 +67,7 @@ impl Component for TopBar {
                                 </Link<Route>>
                         </div>
                         <div class="menu-el">
-                            <Link<Route> to={Route::LoginPage}>
+                            <Link<Route> to={Route::Login}>
                                 <Icon
                                     data={IconData::OCTICONS_SIGN_IN_24}
                                     width={"1.25em".to_owned()}

@@ -2,16 +2,19 @@ use yew::{html, Html};
 use yew_router::components::Redirect;
 use yew_router::Routable;
 use crate::components::{container_component::ContainerComponent, not_found::NotFoundComponent};
+use crate::components::login::LoginComponent;
 
 #[warn(unused_variables)]
 #[derive(Debug, Clone, PartialEq, Routable)]
 pub enum Route {
     #[at("/")]
-    LandingPage,
-    #[at("/login")]
-    LoginPage,
+    Landing,
     #[at("/home")]
     Home,
+    #[at("/login")]
+    Login,
+    #[at("/register")]
+    Register,
     #[at("/404")]
     NotFound,
     #[not_found]
@@ -22,7 +25,7 @@ pub enum Route {
 pub fn switch(route: Route) -> Html {
     match route {
 
-        Route::LandingPage => html! {
+        Route::Landing => html! {
             <ContainerComponent active={false}/>
         },
 
@@ -30,13 +33,17 @@ pub fn switch(route: Route) -> Html {
             <ContainerComponent active={false}/>
         },
 
-        Route::LoginPage => html! {
+        Route::Login => html! {
+            <LoginComponent />
+        },
+        
+        Route::Register => html! {
             <ContainerComponent active={false}/>
         },
 
         Route::NotFound => html! { <NotFoundComponent /> },
 
-        Route::CatchAll => html!{
+        Route::CatchAll => html! {
             <Redirect<Route> to={Route::NotFound} />
         },
     }

@@ -6,7 +6,7 @@
         @apply grid grid-cols-1 grid-rows-3 justify-items-center px-6 py-12;
     }
     .content-article-headline {
-        @apply text-5xl font-bold max-h-max text-mauve-300 self-center;
+        @apply md:text-5xl font-bold max-h-max text-mauve-300 self-center;
     }
     .content-article-body {
         @apply text-lg leading-8;

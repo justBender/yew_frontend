@@ -1,0 +1,68 @@
+@layer utilities {
+
+    .login-form-container {
+        @apply
+        min-h-screen
+        flex items-center
+        justify-center
+        bg-theme-blue2;
+    }
+    .login-form {
+        @apply
+        p-10
+        grid
+        grid-cols-1
+        grid-rows-3
+        justify-items-center
+        gap-1
+        border-6
+        border-theme-yellow
+        bg-theme-gray
+        rounded-lg;
+    }
+    .email {
+        @apply m-6 border-2 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
+    }
+    .email-icon {
+        @apply max-w-fit mx-1;
+    }
+    .email:focus {
+        @apply rounded-xl border-2 border-amber-50;
+    }
+    .password {
+        @apply m-6 border-2 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
+    }
+    .password-icon {
+        @apply max-w-fit mx-1;
+    }
+    .submit-button {
+        @apply mt-3 md:ml-7 md:mr-7 border-2 min-h-10 xs:min-w-34 min-w-12 bg-theme-yellow border-theme-yellow rounded-xl text-center place-content-center;
+    }
+    .email-input {
+        @apply min-h-12 pl-1.5 rounded-l-none border-l-2 border-theme-yellow;
+    }
+    .password-input {
+        @apply min-h-12 pl-1.5 rounded-l-none border-l-2 border-theme-yellow;
+    }
+    .email-input:focus {
+       @apply rounded-xl rounded-l-none cursor-text;
+    }
+    .password-input:focus {
+        @apply rounded-xl rounded-l-none cursor-text;
+    }
+    .email-input::placeholder {
+        @apply text-start;
+    }
+    .password-input::placeholder {
+        @apply text-start;
+    }
+    .reglog {
+        @apply grid grid-cols-1 items-center justify-center;
+    }
+    .register-link {
+        @apply text-center;
+    }
+    .pass-reset-link {
+        @apply text-center;
+    }
+}
