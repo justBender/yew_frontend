@@ -15,26 +15,15 @@ pub struct ContentComponentProps {
     pub image: Option<String>,
 }
 
-pub enum Msg {
-    ToggleMenu,
-}
-
 impl Component for ContentComponent {
-    type Message = Msg;
+    type Message = ();
     type Properties = ContentComponentProps;
 
     fn create(_ctx: &Context<Self>) -> Self {
         Self { active: false }
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg {
-            Msg::ToggleMenu => {
-                self.active = !self.active;
-                true
-            }
-        }
-    }
+    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool { false }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
@@ -42,7 +31,7 @@ impl Component for ContentComponent {
                 <div class="content">
                     <article class="content-article">
                         <div class="content-article-headline">
-                            {"Rust is here!"}
+                            {"Rust Evangelists finally got me."}
                         </div>
                         <img class="content-image" alt="logo" src={ctx.props().image.clone().unwrap_or_default()}/>
                         <div class="content-article-body">

@@ -31,5 +31,7 @@ web-sys = {
         "ImageData"
     ]
 }
+gloo-net = "0.7.0"
+serde_json = "1.0.149"
 [build]
 target = "index.html"

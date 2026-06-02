@@ -32,11 +32,6 @@ impl Component for SideBar {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
-        /*let visible = if ctx.props().active {
-            "side-bar"
-        } else {
-            "side-bar invisible"
-        };*/
         html! {
             <>
                 <div class="side-bar">

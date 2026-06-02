@@ -1,49 +1,141 @@
-use yew::{html, Component, Context, Html, Properties};
+use web_sys::HtmlInputElement;
+use yew::prelude::*;
 
-#[warn(unused_variables)]
-#[derive(Clone, PartialEq, Debug, Default)]
+#[derive(Default)]
 pub struct RegisterComponent {
-    username:String,
-    password:String,
+    username: String,
+    email: String,
+    password: String,
+    password_repeat: String,
 }
 
-#[warn(unused_variables)]
-#[derive(Properties, Clone, PartialEq, Debug, Default)]
-pub struct RegisterComponentProps {
+pub enum Msg {
+    UpdateUsername(String),
+    UpdateEmail(String),
+    UpdatePassword(String),
+    UpdatePasswordRepeat(String),
+    Submit,
 }
 
 impl Component for RegisterComponent {
-    type Message = ();
-    type Properties = RegisterComponentProps;
+    type Message = Msg;
+    type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            username: "".to_string(),
-            password: "".to_string(),
+        Self::default()
+    }
+
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+        match msg {
+            Msg::UpdateUsername(v) => {
+                self.username = v;
+                true
+            }
+            Msg::UpdateEmail(v) => {
+                self.email = v;
+                true
+            }
+
+            Msg::UpdatePassword(v) => {
+                self.password = v;
+                true
+            }
+
+            Msg::UpdatePasswordRepeat(v) => {
+                self.password_repeat = v;
+                true
+            }
+            Msg::Submit => {
+                // send to backend later
+                true
+            }
         }
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {
-        false
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let password_match =
+        !self.password.is_empty() && self.password == self.password_repeat;
+        let submit_disabled = !password_match;
         html! {
-            <>
-                <div class="login-form">
-                    <form>
-                        <div class="email">
-                            <input autocomplete="email" name="email" placeholder="email" type="text"/>
-                        </div>
-                        <div class="password">
-                            <input class="password" name="password" placeholder="password" type="password"/>
-                        </div>
-                        <div class="submit-button">
-                            {"Login"}
-                        </div>
-                    </form>
-                </div>
-            </>
+            <div class="register-form-container">
+                <form class="register-form">
+                    <div class="register-input-box">
+                       <input
+                            required=true
+                            class="register-input"
+                            type="text"
+                            placeholder="username"
+                            value={self.username.clone()}
+                            oninput={ctx.link().callback(|e: InputEvent| {
+                                let input: HtmlInputElement = e.target_unchecked_into();
+                                Msg::UpdateUsername(input.value())
+                            })}
+                        />
+                    </div>
+                    <div class="register-input-box">
+                        <input
+                            required=true
+                            class="register-input"
+                            type="email"
+                            placeholder="email"
+                            value={self.email.clone()}
+                            oninput={ctx.link().callback(|e: InputEvent| {
+                                let input: HtmlInputElement = e.target_unchecked_into();
+                                Msg::UpdateEmail(input.value())
+                            })}
+                        />
+                    </div>
+                    <div class="register-input-box">
+                        <input
+                            required=true
+                            class="register-input"
+                            type="password"
+                            placeholder="password"
+                            value={self.password.clone()}
+                            oninput={ctx.link().callback(|e: InputEvent| {
+                                let input: HtmlInputElement = e.target_unchecked_into();
+                                Msg::UpdatePassword(input.value())
+                            })}
+                        />
+                    </div>
+                    <div class="register-input-box">
+                        <input
+                            required=true
+                            class="register-input"
+                            type="password"
+                            placeholder="repeat password"
+                            value={self.password_repeat.clone()}
+                            oninput={ctx.link().callback(|e: InputEvent| {
+                                let input: HtmlInputElement = e.target_unchecked_into();
+                                Msg::UpdatePasswordRepeat(input.value())
+                            })}
+                        />
+                    </div>
+                    {
+                        if password_match {
+                            html! {
+                                <p class="passmatch">
+                                    {"passwords match"}
+                                </p>
+                            }
+                        } else {
+                            html! {
+                                <p class="passnomatch">
+                                    {"passwords must match"}
+                                </p>
+                            }
+                        }
+                    }
+                    <button
+                        class="register-button"
+                        type="submit"
+                        disabled={submit_disabled}
+                        onclick={ctx.link().callback(|_| Msg::Submit)}
+                    >
+                        {"Register"}
+                    </button>
+                </form>
+            </div>
         }
     }
 }

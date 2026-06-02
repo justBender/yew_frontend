@@ -9,5 +9,5 @@ port = 8080
 #command = "sh"
 #command_arguments = [
 #    "-c",
-#    "pnpm exec tailwindcss -i styles/input.css -o styles/output.css --watch"
+#    "pnpm concurrently 'tailwindcss -i styles/input.css -o styles/output.css -w=always'"
 #]

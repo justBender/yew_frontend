@@ -41,7 +41,7 @@ impl Component for LoginComponent {
                                     height={"2em".to_owned()}
                                 />
                             </div>
-                            <input class="email-input" autocomplete="email" name="email" placeholder="email" type="email"/>
+                            <input class="email-input" autocomplete="on" name="email" placeholder="email" type="email"/>
                         </div>
                         <div class="password">
                             <div class="password-icon">
@@ -51,7 +51,7 @@ impl Component for LoginComponent {
                                     height={"2em".to_owned()}
                                 />
                             </div>
-                            <input class="password-input" autocomplete="password" name="password" placeholder="password" type="password"/>
+                            <input class="password-input" autocomplete="on" name="password" placeholder="password" type="password"/>
                         </div>
                         <div class="reglog">
                             <button type="submit" class="submit-button">
