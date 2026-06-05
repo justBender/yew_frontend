@@ -1,5 +1,5 @@
 @layer utilities {
         .burger-button {
-        @apply
+        @apply cursor-pointer;
     }
 }

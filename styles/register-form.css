@@ -17,7 +17,7 @@
         items-center
         border-6
         border-theme-yellow
-        bg-theme-gray
+        bg-gray-900
         rounded-lg;
     }
     .register-input-box {

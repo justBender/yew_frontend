@@ -31,7 +31,7 @@ impl Component for ContentComponent {
                 <div class="content">
                     <article class="content-article">
                         <div class="content-article-headline">
-                            {"Rust Evangelists finally got me."}
+                            {"Becoming rusty."}
                         </div>
                         <img class="content-image" alt="logo" src={ctx.props().image.clone().unwrap_or_default()}/>
                         <div class="content-article-body">

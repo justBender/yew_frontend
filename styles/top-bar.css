@@ -14,4 +14,7 @@
     .bar-el:first-child {
         @apply sm:col-start-1 col-span-1 grid grid-rows-1 row-start-1 place-content-center items-center sm:mr-12;
     }
+    .burger-button:hover {
+        @apply cursor-pointer;
+    }
 }
