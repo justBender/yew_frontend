@@ -1,12 +1,12 @@
-use yew::{html, Html};
-use yew_router::components::Redirect;
-use yew_router::Routable;
+use crate::components::reset::Reset;
 use crate::components::{
-    container_component::ContainerComponent,
-    not_found::NotFoundComponent,
-    login::LoginComponent,
-    register::RegisterComponent,
+    blog::Blog, contact::Contact, container::Container, content::Content,
+    context::auth_context::AuthContext, login::Login, not_found::NotFoundComponent,
+    profile::Profile, send_reset::SendReset, signup::Signup, stack::Stack, wrapper::Wrapper,
 };
+use yew::{Callback, Html, html};
+use yew_router::Routable;
+use yew_router::components::Redirect;
 
 #[warn(unused_variables)]
 #[derive(Debug, Clone, PartialEq, Routable)]
@@ -17,8 +17,20 @@ pub enum Route {
     Home,
     #[at("/login")]
     Login,
-    #[at("/register")]
-    Register,
+    #[at("/signup")]
+    Signup,
+    #[at("/send-reset")]
+    SendReset,
+    #[at("/pass-reset")]
+    Reset,
+    #[at("/blog")]
+    Blog,
+    #[at("/contact")]
+    Contact,
+    #[at("/stack")]
+    Stack,
+    #[at("/profile")]
+    Profile,
     #[at("/404")]
     NotFound,
     #[not_found]
@@ -26,19 +38,102 @@ pub enum Route {
     CatchAll,
 }
 
-pub fn switch(route: Route) -> Html {
+pub fn switch(route: Route, callback: Callback<AuthContext>) -> Html {
     match route {
+        Route::Landing => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Content image={"static/assets/BenderAndFerris_cutout.png"} />
+                        </Wrapper>
+                    </Container>
+        },
 
-        Route::Landing => html! { <ContainerComponent active={false}/> },
+        Route::Home => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Content image={"static/assets/BenderAndFerris_cutout.png"} />
+                        </Wrapper>
+                    </Container>
+        },
 
-        Route::Home => html! { <ContainerComponent active={false}/> },
+        Route::Login => html! {
+                   <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Login context_callback={callback.clone()} />
+                        </Wrapper>
+                   </Container>
+        },
 
-        Route::Login => html! { <LoginComponent /> },
-        
-        Route::Register => html! { <RegisterComponent /> },
+        Route::Signup => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Signup />
+                        </Wrapper>
+                    </Container>
+        },
 
-        Route::NotFound => html! { <NotFoundComponent /> },
+        Route::SendReset => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <SendReset />
+                        </Wrapper>
+                    </Container>
+        },
 
-        Route::CatchAll => html! { <Redirect<Route> to={Route::NotFound} /> },
+        Route::Reset => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Reset />
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::Blog => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Blog image={"static/assets/BenderAndFerris_cutout.png"} />
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::Stack => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Stack />
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::Contact => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Contact />
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::Profile => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Profile context_callback={callback.clone()}/>
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::NotFound => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <NotFoundComponent />
+                        </Wrapper>
+                    </Container>
+        },
+
+        Route::CatchAll => html! {
+                    <Container context_callback={callback.clone()}>
+                        <Wrapper>
+                            <Redirect<Route> to={Route::NotFound} />
+                        </Wrapper>
+                    </Container>
+        },
     }
 }

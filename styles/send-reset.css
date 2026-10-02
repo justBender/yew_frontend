@@ -1,0 +1,53 @@
+@layer utilities {
+
+    .send-reset-form-container {
+        @apply
+        min-h-screen
+        flex items-center
+        justify-center;
+    }
+    .send-reset-form {
+        @apply
+        p-10
+        grid
+        grid-cols-1
+        grid-rows-3
+        items-center
+        border-6
+        border-theme-yellow
+        rounded-lg;
+    }
+    .send-reset-email {
+        @apply my-5 border-2 min-h-10 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
+    }
+    .send-reset-email-icon {
+        @apply max-w-fit mx-2 max-sm:hidden;
+    }
+    .send-reset-submit-button {
+        @apply my-5 border-2 min-h-10 min-w-fit bg-theme-yellow border-theme-yellow rounded-xl text-center place-content-center;
+    }
+    .send-reset-submit-button:hover {
+        @apply cursor-pointer;
+    }
+    .send-reset-input {
+        @apply
+        min-h-10
+        pl-1.5
+        sm:rounded-l-none
+        sm:border-l-2
+        border-theme-yellow
+        focus:rounded-xl
+        sm:focus:rounded-l-none
+        focus:cursor-text
+        w-full;
+    }
+    .send-reset-input::placeholder {
+        @apply max-sm:text-center text-start overflow-hidden italic;
+    }
+    .send-reset-button-box {
+        @apply min-w-full grid grid-cols-1 items-center justify-center;
+    }
+    .send-reset-hint {
+        @apply text-center italic text-pretty xs:w-60 wrap-break-word;
+    }
+}

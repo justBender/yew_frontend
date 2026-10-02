@@ -8,4 +8,9 @@
 @import "./whitenoise.css";
 @import "./content.css";
 @import "./login-form.css";
-@import "./register-form.css";
+@import "./signup-form.css";
+@import "./send-reset.css";
+@import "./reset-form.css";
+@import "./profile.css";
+@import "./contact.css";
+@import "./stack.css";

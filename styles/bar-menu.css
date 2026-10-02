@@ -1,14 +1,23 @@
 @layer utilities {
-    .bar-menu {
-        @apply hidden sm:col-start-4 sm:col-span-1 sm:flex flex-row justify-center gap-5;
-    }
-    .menu-el:first-child {
-        @apply place-self-center;
-    }
-    .menu-el:nth-child(2) {
-        @apply place-self-center;
-    }
-    .menu-el:last-child {
-        @apply place-self-center;
-    }
+  .bar-menu {
+    @apply hidden sm:col-start-4 sm:col-span-1 sm:row-start-2 sm:row-span-1 sm:flex flex-row justify-center place-content-evenly;
+  }
+  .menu-el {
+    @apply w-10 flex flex-row justify-center;
+  }
+  .menu-el:hover {
+    @apply text-white;
+  }
+  .menu-el:nth-child {
+    @apply place-self-center;
+  }
+  .menu-el:first-child {
+    @apply place-self-center;
+  }
+  .menu-el:nth-child(2) {
+    @apply place-self-center;
+  }
+  .menu-el:last-child {
+    @apply place-self-center;
+  }
 }

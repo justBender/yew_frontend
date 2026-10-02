@@ -1,0 +1,55 @@
+@layer utilities {
+  .stack {
+    @apply grid grid-cols-3 grid-rows-1 border-2 rounded-md;
+  }
+  .stack-container {
+    @apply col-span-3 row-span-1 grid grid-cols-3 grid-rows-1 gap-2 text-nowrap place-items-center;
+  }
+  /*
+  .stack {
+    @apply place-self-center col-start-1 col-span-1 border-2 rounded-md border-theme-yellow w-80 place-content-center;
+  }
+  .stack-container {
+    @apply place-self-center col-start-1 col-span-1 grid grid-cols-3 grid-rows-1 gap-2 text-nowrap;
+  }
+  .stack-container:last-child {
+    @apply pb-3;
+  }
+  .stack-gist {
+    @apply place-self-center col-start-1 col-span-2 pt-3 text-theme-yellow text-wrap w-60 mb-5;
+  }
+  .heart-icon {
+    @apply text-red-600 inline;
+  }
+  .stack-element {
+    @apply col-start-2 col-span-1 flex flex-row justify-items-center gap-5 w-fit;
+  }
+  .stack-element:hover {
+    @apply cursor-pointer;
+  }
+  .stack-link {
+    @apply flex flex-row gap-5 place-content-center content-center;
+  }
+  .stack-icon {
+    @apply col-start-1 col-span-1 place-self-end border border-theme-yellow rounded-md shrink;
+  }
+  .stack-content {
+    @apply col-start-2 col-span-1 text-theme-yellow;
+  }
+  .stack-content:hover {
+    @apply text-white;
+  }
+  .rust-icon {
+    @apply text-theme-rust-orange;
+  }
+  .tailwindcss-icon {
+    @apply text-theme-tailwindcss-blue;
+  }
+  .docker-icon {
+    @apply text-theme-docker-blue;
+  }
+  .git-icon {
+    @apply text-theme-git-orange;
+  }
+  */
+}

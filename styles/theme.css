@@ -10,6 +10,13 @@
         --color-theme-blue3: #0b409c;
         --color-theme-blue4: #10316b;
         --color-theme-yellow: #ffce63;
+        --color-theme-rust-orange: #D34516;
+        --color-theme-rust-darkblue: #1E2650;
+        --color-theme-rust-blue: #28607F;
+        --color-theme-rust-silver: #67737A;
+        --color-theme-tailwindcss-blue: #00bcff;
+        --color-theme-docker-blue: #2560FF;
+        --color-theme-git-orange: #f64d27;
 }
 @theme inline {
         --breakpoint-xs: 30rem;

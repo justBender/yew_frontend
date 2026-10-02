@@ -1,13 +1,14 @@
 @layer utilities {
     .wrapper {
-        @apply bg-gray-900
+        @apply bg-transparent
         row-start-1
         row-end-4
         col-start-2
         col-span-2
         max-sm:row-start-2
         max-sm:row-end-4
-        max-sm:col-start-2
-        max-sm:col-span-2;
+        max-sm:col-start-1
+        max-sm:col-span-4
+        self-center;
     }
 }

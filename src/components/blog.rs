@@ -1,23 +1,37 @@
-use yew::{Children, Component, Context, Html, Properties, html};
+use crate::components::context::auth_context::AuthContext;
+use yew::{Children, Component, Context, ContextHandle, Html, Properties, html};
 
 #[warn(unused_variables)]
-#[derive(Clone, PartialEq, Debug, Default)]
-pub struct Content;
+pub struct Blog {
+    pub auth_context: AuthContext,
+    pub _listener: ContextHandle<AuthContext>,
+}
 
 #[warn(unused_variables)]
 #[derive(Properties, Clone, PartialEq, Debug, Default)]
-pub struct ContentProps {
+pub struct BlogProps {
     #[prop_or_default]
     pub children: Children,
     pub image: Option<String>,
 }
 
-impl Component for Content {
-    type Message = ();
-    type Properties = ContentProps;
+pub enum BlogMsg {
+    AuthUpdate(AuthContext),
+}
 
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
+impl Component for Blog {
+    type Message = BlogMsg;
+    type Properties = BlogProps;
+
+    fn create(ctx: &Context<Self>) -> Self {
+        let (auth_context, handle) = ctx
+            .link()
+            .context::<AuthContext>(ctx.link().callback(BlogMsg::AuthUpdate))
+            .unwrap();
+        Self {
+            auth_context,
+            _listener: handle,
+        }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, _msg: Self::Message) -> bool {

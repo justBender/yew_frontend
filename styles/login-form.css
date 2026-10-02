@@ -3,34 +3,42 @@
     .login-form-container {
         @apply
         min-h-screen
-        flex items-center
-        justify-center
-        bg-theme-gray-900;
+        grid grid-cols-4 grid-rows-3 max-sm:items-center
+        items-center;
     }
     .login-form {
         @apply
+        lg:col-start-2
+        lg:col-span-2
+        md:col-start-1
+        md:col-span-4
+        row-start-2
+        row-span-1
+        col-start-1
+        col-span-4
         p-10
         grid
         grid-cols-1
-        grid-rows-3
+        grid-rows-4
+        items-center
         border-6
         border-theme-yellow
         rounded-lg;
     }
     .email {
-        @apply border-2 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
+        @apply my-3 border-2 min-h-10 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
     }
     .email-icon {
         @apply max-w-fit mx-2 max-sm:hidden;
     }
     .password {
-        @apply border-2 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
+        @apply border-2 min-h-10 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
     }
     .password-icon {
         @apply max-w-fit mx-2 max-sm:hidden;
     }
     .submit-button {
-        @apply mt-9 mb-3 border-2 min-h-10 min-w-fit bg-theme-yellow border-theme-yellow rounded-xl text-center place-content-center;
+        @apply border-2 min-h-10 min-w-fit bg-theme-yellow border-theme-yellow rounded-xl text-center place-content-center;
     }
     .email-input {
         @apply
@@ -65,10 +73,16 @@
     .reglog {
         @apply min-w-full grid grid-cols-1 items-center justify-center;
     }
-    .register-link {
+    .pass-reset-links {
+        @apply grid grid-cols-1 grid-rows-2 items-center justify-center;
+    }
+    .signup-link {
         @apply text-center text-blue-600 hover:underline;
     }
     .pass-reset-link {
         @apply text-center text-blue-600 hover:underline;
+    }
+    .submit-button:hover {
+        @apply cursor-pointer;
     }
 }

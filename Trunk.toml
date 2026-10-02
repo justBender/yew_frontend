@@ -3,11 +3,6 @@
 addresses = ["127.0.0.1"]
 # The port to serve on.
 port = 8080
+[tools]
+tailwindcss = "4.3.3"
 
-#[[hooks]]
-#stage = "build"
-#command = "sh"
-#command_arguments = [
-#    "-c",
-#    "pnpm concurrently 'tailwindcss -i styles/input.css -o styles/output.css -w=always'"
-#]

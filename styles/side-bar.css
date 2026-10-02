@@ -1,34 +1,34 @@
 @layer utilities {
-    .side-bar {
-        transform: translateX(0);
-        transition: transform 0.3s ease;
-        @apply
-        sm:col-start-1
-        sm:col-span-1
-        sm:row-start-1
-        sm:row-span-1
+  .side-bar {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    @apply z-10
+        sm:hidden
         max-sm:row-start-1
         max-sm:row-span-1
         max-sm:col-start-2
         max-sm:col-span-2
         text-theme-yellow
-        grid grid-cols-1 grid-rows-4 px-2 py-15 transition-colors
+        grid grid-cols-1 grid-rows-5 px-2 py-15 transition-colors
         max-sm:place-content-center;
-    }
-    .side-bar.invisible {
-        transform: translateX(-100%);
-        @apply justify-self-center;
-    }
-    .side-bar-el {
-        @apply max-sm:place-self-center sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:gap-6 justify-items-center items-center;
-    }
-    .side-bar-el:hover {
-        @apply bg-theme-gray rounded-xl cursor-pointer scale-105 mx-40;
-    }
-    .side-bar-el-label {
-        @apply sm:col-start-2 sm:col-span-1 sm:row-start-1 sm:row-span-1 sm:place-self-start sm:self-center sm:basis-1/2 max-sm:hidden;
-    }
-    .side-bar-icon {
-        @apply sm:col-start-1 sm:col-span-1 sm:row-start-1 sm:row-span-1 sm:self-center sm:place-self-end;
-    }
+  }
+  .side-bar.invisible {
+    transform: translateX(-100%);
+    @apply justify-self-center;
+  }
+  .side-bar-el {
+    @apply grid grid-cols-2 grid-rows-1 justify-items-center items-center max-w-fit place-self-center;
+  }
+  .profile-link {
+    @apply col-start-1 col-span-2 row-start-1 row-span-1 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:gap-6 justify-center;
+  }
+  .side-bar-el:hover {
+    @apply text-white rounded-xl cursor-pointer;
+  }
+  .side-bar-el-label {
+    @apply sm:col-start-2 sm:col-span-1 sm:row-start-1 sm:row-span-1 sm:place-self-end sm:self-center sm:basis-1/2 max-sm:hidden;
+  }
+  .side-bar-icon {
+    @apply sm:col-start-1 sm:col-span-1 sm:row-start-1 sm:row-span-1 sm:self-center sm:place-self-end;
+  }
 }

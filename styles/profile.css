@@ -1,0 +1,50 @@
+@layer utilities {
+    .profile-container {
+        @apply place-self-center grid grid-cols-2 grid-rows-4 py-20 border-4 rounded-md items-center border-theme-yellow w-150;
+    }
+    .profile-picture {
+        @apply place-self-center-safe justify-self-center-safe border-2 rounded-md border-theme-yellow col-start-1 col-span-1 row-start-1 row-span-3;
+    }
+    .save-image-button {
+        @apply place-self-center hover:cursor-pointer col-start-1 col-span-1 row-start-4 row-span-1 border rounded-sm border-theme-yellow w-40;
+    }
+    .save-image-button:disabled {
+        @apply hover:cursor-not-allowed;
+    }
+    .image-upload {
+        @apply grid grid-cols-2 grid-rows-1;
+    }
+    .image {
+        @apply col-start-1 col-span-2 row-start-1 row-span-1 rounded-sm h-40 w-40;
+    }
+    .image-placeholder {
+        @apply col-start-1 col-span-2 row-start-1 row-span-1;
+    }
+    .image-label {
+        @apply col-start-2 col-span-1 row-start-1 row-span-1 place-self-end rounded-sm px-0.5 bg-gray-900;
+    }
+    .upload-label-icon {
+        @apply text-theme-yellow z-10 rounded-md;
+    }
+    .upload-label-icon:hover {
+        @apply text-white cursor-pointer;
+    }
+    .profile-name-container {
+        @apply col-start-2 col-span-1 row-start-1 row-end-1 text-theme-yellow;
+    }
+    .profile-name {
+        @apply text-theme-yellow;
+    }
+    .profile-email-container {
+        @apply col-start-2 col-span-1 row-start-2 row-end-2 text-theme-yellow;
+    }
+    .profile-email {
+        @apply text-theme-yellow;
+    }
+    .profile-roles-container {
+        @apply col-start-2 col-span-1 row-start-3 row-end-3 grid grid-cols-3 grid-rows-1 text-theme-yellow;
+    }
+    .profile-roles {
+        @apply text-theme-yellow;
+    }
+}

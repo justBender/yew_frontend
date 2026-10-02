@@ -7,31 +7,33 @@ edition = "2024"
 name = "bin"
 path = "src/main.rs"
 
-[tools]
-tailwindcss = "4.3.0"
+[[tools]]
+tailwindcss = "4.3.3"
 
 [dependencies]
-yew = {
-    version="^0.23.0",
-    features=["csr"]
-}
-yew_icons = {
-    version = "^0.10",
-    features = ["heroicons_solid", "simple_icons","octicons", "bootstrap"]
-}
+yew = { version = "^0.23.0", features = ["csr"] }
+yew_icons = { version = "^0.10", features = [
+  "heroicons_solid",
+  "simple_icons",
+  "octicons",
+  "bootstrap",
+  "lucide",
+] }
 yew-router = "^0.20.0"
 gloo = "^0.12.0"
-wasm-bindgen = "^0.2.121"
-js-sys = "^0.3.98"
-web-sys = {
-    version = "^0.3.98",
-    features = [
-        "CanvasRenderingContext2d",
-        "HtmlCanvasElement",
-        "ImageData"
-    ]
-}
+wasm-bindgen = "^0.2.128"
+js-sys = "^0.3.105"
+web-sys = { version = "^0.3.105", features = [
+  "HtmlButtonElement",
+  "CanvasRenderingContext2d",
+  "HtmlCanvasElement",
+  "ImageData",
+] }
 gloo-net = "0.7.0"
-serde_json = "1.0.149"
+serde_json = "^1.0.151"
+wasm-bindgen-futures = "0.4.78"
+serde = { version = "1.0.229", features = ["derive"] }
+form_urlencoded = "1.2.2"
+clippy = "0.0.302"
 [build]
 target = "index.html"

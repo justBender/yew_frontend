@@ -1,15 +1,18 @@
 @layer utilities {
     .content {
-        @apply grid grid-cols-1 grid-rows-1 place-content-center;
+        @apply grid grid-cols-1 grid-rows-1 place-content-center wrap-break-word;
     }
     .content-article {
-        @apply grid grid-cols-1 grid-rows-3 justify-items-center px-6 py-12;
+        @apply grid grid-cols-1 grid-rows-3 justify-items-center;
     }
     .content-article-headline {
-        @apply md:text-5xl font-bold max-h-max text-mauve-300 self-center;
+        @apply sm:text-5xl text-3xl font-bold max-sm:max-h-max text-mauve-300 self-center max-sm:mx-5 max-sm:break-all wrap-normal;
+    }
+    .content-article-subtitle {
+        @apply sm:text-3xl text-xl mb-5;
     }
     .content-article-body {
-        @apply text-lg leading-8;
+        @apply max-sm:text-lg leading-8 sm:w-90 max-sm:mx-5 max-sm:wrap-break-word max-sm:break-all;
     }
     .content-image {
         @apply w-56;

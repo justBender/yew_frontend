@@ -1,16 +1,22 @@
 @layer utilities {
 
-    .register-form-container {
+    .signup-form-container {
         @apply
         min-h-screen
-        flex
-        items-center
-        justify-center
-        bg-gray-900;
+        grid grid-cols-4 grid-rows-3 max-sm:items-center
+        items-center;
     }
-    .register-form {
+    .signup-form {
         @apply
-        p-15
+        lg:col-start-2
+        lg:col-span-2
+        md:col-start-1
+        md:col-span-4
+        row-start-2
+        row-span-1
+        col-start-1
+        col-span-4
+        p-10
         grid
         grid-cols-1
         grid-rows-6
@@ -20,23 +26,29 @@
         bg-gray-900
         rounded-lg;
     }
-    .register-input-box {
+    .signup-input-box {
         @apply my-3 border-2 border-theme-yellow rounded-xl flex flex-row items-center justify-center;
     }
-    .register-button {
+    .signup-submit-button {
         @apply my-3 border-2 min-h-10 min-w-fit bg-theme-yellow border-theme-yellow rounded-xl text-center place-content-center;
     }
-    .register-input {
+    .signup-submit-button:hover {
+        @apply cursor-pointer;
+    }
+    .signup-input {
         @apply
         min-h-10
         pl-1.5
+        sm:rounded-l-none
+        sm:border-l-2
         border-theme-yellow
         focus:rounded-xl
+        sm:focus:rounded-l-none
         focus:cursor-text
         w-full;
     }
-    .register-input::placeholder {
-        @apply text-center italic;
+    .signup-input::placeholder {
+        @apply text-start italic;
     }
     .passmatch {
         @apply text-green-500 text-center;

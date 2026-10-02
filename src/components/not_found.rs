@@ -35,26 +35,19 @@ pub fn not_found_page() -> Html {
                 let mut pixels = vec![0u8; pixel_count];
 
                 for i in (0..pixel_count).step_by(4) {
-                    let shade =
-                        ((js_sys::Math::random() * 255.0) + 50.0)
-                            .min(255.0) as u8;
+                    let shade = ((js_sys::Math::random() * 255.0) + 50.0).min(255.0) as u8;
 
-                    pixels[i] = shade;       // R
-                    pixels[i + 1] = shade;   // G
-                    pixels[i + 2] = shade;   // B
-                    pixels[i + 3] = 255;     // Alpha
+                    pixels[i] = shade; // R
+                    pixels[i + 1] = shade; // G
+                    pixels[i + 2] = shade; // B
+                    pixels[i + 3] = 255; // Alpha
                 }
 
                 let image =
-                    ImageData::new_with_u8_clamped_array_and_sh(
-                        Clamped(&pixels),
-                        width,
-                        height,
-                    )
+                    ImageData::new_with_u8_clamped_array_and_sh(Clamped(&pixels), width, height)
                         .unwrap();
 
-                ctx.put_image_data(&image, 0.0, 0.0)
-                    .unwrap();
+                ctx.put_image_data(&image, 0.0, 0.0).unwrap();
             });
 
             move || drop(interval)
