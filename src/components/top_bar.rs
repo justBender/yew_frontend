@@ -71,8 +71,8 @@ impl Component for TopBar {
                         <button class="burger-button" onclick={onclick}>
                             <Icon
                                 data={IconData::SIMPLE_ICONS_RUST}
-                                width={"1.5rem".to_owned()}
-                                height={"1.5rem".to_owned()}
+                                width={"1rem".to_owned()}
+                                height={"1rem".to_owned()}
                             />
                         </button>
                     </div>
@@ -81,26 +81,8 @@ impl Component for TopBar {
                             <Link<Route> to={Route::Home}>
                                 <Icon
                                     data={IconData::HEROICONS_SOLID_HOME}
-                                    width={"1.5rem".to_owned()}
-                                    height={"1.5rem".to_owned()}
-                                />
-                            </Link<Route>>
-                        </div>
-                        <div class="menu-el">
-                            <Link<Route> to={Route::Contact}>
-                                <Icon
-                                    data={IconData::BOOTSTRAP_ENVELOPE_AT}
-                                    width={"1.5rem".to_owned()}
-                                    height={"1.5rem".to_owned()}
-                                />
-                            </Link<Route>>
-                        </div>
-                        <div class="menu-el">
-                            <Link<Route> to={Route::Stack}>
-                                <Icon
-                                    data={IconData::BOOTSTRAP_BRACES_ASTERISK}
-                                    width={"1.5rem".to_owned()}
-                                    height={"1.5rem".to_owned()}
+                                    width={"1rem".to_owned()}
+                                    height={"1rem".to_owned()}
                                 />
                             </Link<Route>>
                         </div>
@@ -108,8 +90,17 @@ impl Component for TopBar {
                             <Link<Route> to={Route::Blog}>
                                 <Icon
                                     data={IconData::BOOTSTRAP_QUOTE}
-                                    width={"1.5rem".to_owned()}
-                                    height={"1.5rem".to_owned()}
+                                    width={"1rem".to_owned()}
+                                    height={"1rem".to_owned()}
+                                />
+                            </Link<Route>>
+                        </div>
+                        <div class="menu-el">
+                            <Link<Route> to={Route::Contact}>
+                                <Icon
+                                    data={IconData::BOOTSTRAP_ENVELOPE_AT}
+                                    width={"1rem".to_owned()}
+                                    height={"1rem".to_owned()}
                                 />
                             </Link<Route>>
                         </div>
@@ -121,8 +112,8 @@ impl Component for TopBar {
                                             <button class="logout-button" type="button" onclick={logout}>
                                                 <Icon
                                                     data={IconData::HEROICONS_SOLID_ARROW_RIGHT_ON_RECTANGLE}
-                                                    width={"1.5rem".to_owned()}
-                                                    height={"1.5rem".to_owned()}
+                                                    width={"1rem".to_owned()}
+                                                    height={"1rem".to_owned()}
                                                 />
                                             </button>
                                         </div>
@@ -130,8 +121,8 @@ impl Component for TopBar {
                                             <Link<Route> to={Route::Profile}>
                                                 <Icon
                                                     data={IconData::BOOTSTRAP_PEOPLE}
-                                                    width={"1.5rem".to_owned()}
-                                                    height={"1.5rem".to_owned()}
+                                                    width={"1rem".to_owned()}
+                                                    height={"1rem".to_owned()}
                                                 />
                                             </Link<Route>>
                                         </div>
@@ -139,8 +130,8 @@ impl Component for TopBar {
                                             <a href="https://github.com/justbender/" target="_blank" rel="noopener noreferrer" role="link">
                                                 <Icon
                                                     data={IconData::BOOTSTRAP_GIT}
-                                                    width={"1.2rem".to_owned()}
-                                                    height={"1.2rem".to_owned()}
+                                                    width={"1rem".to_owned()}
+                                                    height={"1rem".to_owned()}
                                                 />
                                             </a>
                                         </div>
@@ -153,8 +144,8 @@ impl Component for TopBar {
                                         <Link<Route> to={Route::Login}>
                                             <Icon
                                                 data={IconData::HEROICONS_SOLID_ARROW_LEFT_ON_RECTANGLE}
-                                                width={"1.5rem".to_owned()}
-                                                height={"1.5rem".to_owned()}
+                                                width={"1rem".to_owned()}
+                                                height={"1rem".to_owned()}
                                             />
                                         </Link<Route>>
                                     </div>
@@ -162,8 +153,8 @@ impl Component for TopBar {
                                         <Link<Route> to={Route::Signup}>
                                             <Icon
                                                 data={IconData::HEROICONS_SOLID_PENCIL_SQUARE}
-                                                width={"1.5rem".to_owned()}
-                                                height={"1.5rem".to_owned()}
+                                                width={"1rem".to_owned()}
+                                                height={"1rem".to_owned()}
                                             />
                                         </Link<Route>>
                                     </div>
@@ -172,7 +163,6 @@ impl Component for TopBar {
                             }
                         }
                     </div>
-                    /*<hr class="hr-line"/>*/
                 </div>
             </>
         }

@@ -1,5 +1,5 @@
 use crate::components::context::auth_context::AuthContext;
-use crate::components::side_bar::SideBar;
+use crate::components::footer::Footer;
 use crate::components::top_bar::TopBar;
 use yew::{Callback, Children, Component, Context, ContextHandle, Html, Properties, html};
 
@@ -58,9 +58,9 @@ impl Component for Container {
         html! {
             <>
                 <div id="container">
-                    <SideBar context_callback={ctx.props().context_callback.clone()} active={self.sidebar_active} />
                     <TopBar context_callback={ctx.props().context_callback.clone()} toggle={toggle} />
                     { for ctx.props().children.iter() }
+                    <Footer />
                 </div>
             </>
         }

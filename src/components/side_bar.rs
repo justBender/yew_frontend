@@ -98,17 +98,6 @@ impl Component for SideBar {
                         </Link<Route>>
                     </div>
                     <div class="side-bar-el">
-                        <Link<Route> classes="profile-link" to={Route::Stack}>
-                            <Icon
-                                data={IconData::BOOTSTRAP_BRACES_ASTERISK}
-                                width={"1.5rem".to_owned()}
-                                height={"1.5rem".to_owned()}
-                                class={"side-bar-icon"}
-                            />
-                            <div class="side-bar-el-label">{"stack"}</div>
-                        </Link<Route>>
-                    </div>
-                    <div class="side-bar-el">
                         <Link<Route> classes="profile-link" to={Route::Blog}>
                             <Icon
                                 data={IconData::BOOTSTRAP_QUOTE}

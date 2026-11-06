@@ -18,3 +18,4 @@ pub(crate) mod stack;
 pub(crate) mod top_bar;
 pub(crate) mod wrapper;
 pub(crate) mod stack_element;
+pub(crate) mod footer;

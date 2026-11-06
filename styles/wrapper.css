@@ -1,7 +1,7 @@
 @layer utilities {
     .wrapper {
         @apply bg-transparent
-        row-start-1
+        row-start-2
         row-end-4
         col-start-2
         col-span-2

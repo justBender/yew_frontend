@@ -58,7 +58,7 @@ impl Component for App {
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        let set_auth = ctx.link().callback(|auth| AppMsg::AuthUpdate(auth));
+        let set_auth = ctx.link().callback(AppMsg::AuthUpdate);
         html! {
             <>
                 <ContextProvider<AuthContext> context={self.auth_context.clone()}>

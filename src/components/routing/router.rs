@@ -2,7 +2,7 @@ use crate::components::reset::Reset;
 use crate::components::{
     blog::Blog, contact::Contact, container::Container, content::Content,
     context::auth_context::AuthContext, login::Login, not_found::NotFoundComponent,
-    profile::Profile, send_reset::SendReset, signup::Signup, stack::Stack, wrapper::Wrapper,
+    profile::Profile, send_reset::SendReset, signup::Signup, wrapper::Wrapper,
 };
 use yew::{Callback, Html, html};
 use yew_router::Routable;
@@ -27,8 +27,6 @@ pub enum Route {
     Blog,
     #[at("/contact")]
     Contact,
-    #[at("/stack")]
-    Stack,
     #[at("/profile")]
     Profile,
     #[at("/404")]
@@ -92,14 +90,6 @@ pub fn switch(route: Route, callback: Callback<AuthContext>) -> Html {
                     <Container context_callback={callback.clone()}>
                         <Wrapper>
                             <Blog image={"static/assets/BenderAndFerris_cutout.png"} />
-                        </Wrapper>
-                    </Container>
-        },
-
-        Route::Stack => html! {
-                    <Container context_callback={callback.clone()}>
-                        <Wrapper>
-                            <Stack />
                         </Wrapper>
                     </Container>
         },

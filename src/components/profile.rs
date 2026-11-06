@@ -113,7 +113,7 @@ impl Component for Profile {
             }
             Self::Message::SaveImage => {
                 let props = ctx.props().clone();
-                let image = copy_self.preview_image.clone();
+                //let image = copy_self.preview_image.clone();
                 let file_extension = copy_self.extension.clone();
                 let file = copy_self.file.clone().unwrap();
                 let user_id = copy_self.id.clone();
@@ -223,8 +223,8 @@ impl Component for Profile {
                     <div class="profile-roles-container">
                     {
                         if !&self.roles.is_empty() {
-                                self.roles.iter().map(|role|{
-            html! {
+                            self.roles.iter().map(|role|{
+                                html! {
                                     <div class="profile-roles">{role}</div>
                                 }
                             }).collect()

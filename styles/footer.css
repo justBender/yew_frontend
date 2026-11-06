@@ -1,0 +1,25 @@
+@layer utilities {
+  .footer-container {
+    @apply col-start-1
+        col-span-4
+        row-start-7
+        row-span-1
+        bg-gray-900;
+  }
+
+  .footer {
+    @apply grid grid-cols-5 grid-rows-3 place-content-center gap-1;
+  }
+
+  .footer-text {
+    @apply flex flex-row place-content-end items-center gap-1 text-xs;
+  }
+
+  .heart-icon-container {
+    @apply self-center;
+  }
+
+  .heart-icon {
+    @apply text-red-600;
+  }
+}

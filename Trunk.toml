@@ -1,8 +1,12 @@
+[core]
+# trunk version
+trunk-version = "0.22.1"
 [serve]
 # The address to serve on.
 addresses = ["127.0.0.1"]
 # The port to serve on.
 port = 8080
 [tools]
-tailwindcss = "4.3.3"
-
+tailwindcss = "4.3.4"
+[clean]
+cargo = true
